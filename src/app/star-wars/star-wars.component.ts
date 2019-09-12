@@ -16,7 +16,11 @@ export class StarWarsComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.dataService.getPlanetas().subscribe(response => {
+    
+  }
+
+  getPlanetas() {
+    this.dataService.getPlanetas().subscribe( response => {
       console.log(response)
       this.planeta = response
       console.log(this.planeta)

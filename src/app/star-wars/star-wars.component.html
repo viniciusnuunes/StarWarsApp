@@ -4,8 +4,7 @@
       <mat-card-title>Star Wars Planets</mat-card-title>
     </mat-card-header>
     <mat-card-content>
-      <mat-list>
-        <p>{{planeta.nome}}</p>
+      <mat-list>        
         <!-- <mat-list-item *ngFor="let p of planeta">
           <p mat-line>{{p.nome}}</p>
           <p mat-line>{{p.climate}} | {{p.population}}</p>
@@ -13,7 +12,7 @@
       </mat-list>
     </mat-card-content>
     <mat-card-actions>
-      <button mat-raised-button color="primary" (click)="pesquisarPessoa()">
+      <button mat-raised-button color="primary" (click)="getPlanetas()">
         <mat-icon>cached</mat-icon>
       </button>
     </mat-card-actions>
