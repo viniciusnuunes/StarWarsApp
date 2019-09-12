@@ -1,1 +1,23 @@
-<p>star-wars works!</p>
+<div fxLayout="row" fxLayoutAlign="center">
+  <mat-card fxFlex="75%" class="mat-elevation-z8">
+    <mat-card-header>
+      <mat-card-title>Star Wars Planets</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <mat-list>
+        <p>{{planeta.nome}}</p>
+        <!-- <mat-list-item *ngFor="let p of planeta">
+          <p mat-line>{{p.nome}}</p>
+          <p mat-line>{{p.climate}} | {{p.population}}</p>
+        </mat-list-item> -->
+      </mat-list>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-raised-button color="primary" (click)="pesquisarPessoa()">
+        <mat-icon>cached</mat-icon>
+      </button>
+    </mat-card-actions>
+    <mat-card-footer>	
+    </mat-card-footer>
+  </mat-card>
+</div>

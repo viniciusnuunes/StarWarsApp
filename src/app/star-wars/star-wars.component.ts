@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { DataService } from './data.service';
+import { IPlanet } from './iplanet';
 
 @Component({
   selector: 'app-star-wars',
@@ -7,9 +9,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class StarWarsComponent implements OnInit {
 
-  constructor() { }
+  planeta: IPlanet[];
+
+  constructor(
+    private dataService: DataService
+  ) { }
 
   ngOnInit() {
+    this.dataService.getPlanetas().subscribe(response => {
+      console.log(response)
+      this.planeta = response
+      console.log(this.planeta)
+    })
   }
 
 }
