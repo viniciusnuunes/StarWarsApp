@@ -1,8 +1,11 @@
 export interface IPlanet {
-  name: string,
-  climate: string,
-  population: string,
-  terrain: string,
-  films: [],
-  residents: []
+  count: number,
+  results: {
+    name: string,
+    climate: string,
+    population: string,
+    terrain: string,
+    films: [],
+    residents: []
+  }
 }

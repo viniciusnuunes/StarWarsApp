@@ -1,3 +1,9 @@
+
+<p>{{ planeta.name }}</p>
+<p>{{ planeta.climate }}</p>
+<p>{{ planeta.population }}</p>
+<p>{{ planeta.films }}</p>
+
 <div fxLayout="row" fxLayoutAlign="center">
   <mat-card fxFlex="75%" class="mat-elevation-z8">
     <mat-card-header>
@@ -6,8 +12,10 @@
     <mat-card-content>
       <mat-list>        
         <!-- <mat-list-item *ngFor="let p of planeta">
-          <p mat-line>{{p.nome}}</p>
-          <p mat-line>{{p.climate}} | {{p.population}}</p>
+          <p mat-line>{{ p.name }}</p>
+          <p mat-line>{{ p.climate }}</p>
+          <p mat-line>{{ p.population }}</p>
+          <p mat-line>{{ p.films }}</p>
         </mat-list-item> -->
       </mat-list>
     </mat-card-content>

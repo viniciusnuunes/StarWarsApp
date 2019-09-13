@@ -9,21 +9,30 @@ import { IPlanet } from './iplanet';
 })
 export class StarWarsComponent implements OnInit {
 
-  planeta: IPlanet[];
-
+  
   constructor(
     private dataService: DataService
-  ) { }
-
-  ngOnInit() {
+    ) { }
     
-  }
+    // planeta: any;
+    
+    ngOnInit() {
+      
+    }
+    
+  planeta: any = [];
+  count = 0;
 
   getPlanetas() {
-    this.dataService.getPlanetas().subscribe( response => {
+    this.dataService.getPlanetas().subscribe(response => {
       console.log(response)
-      this.planeta = response
-      console.log(this.planeta)
+      const newCount = Math.floor(Math.random() * response.count).toString()
+
+      console.log(newCount)
+      this.dataService.getPlanetas(newCount).subscribe(res => {
+        console.log(res)
+        this.planeta = res;
+      })
     })
   }
 
