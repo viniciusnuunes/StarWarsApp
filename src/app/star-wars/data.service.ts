@@ -8,13 +8,18 @@ import { Observable } from 'rxjs';
 })
 export class DataService {
 
-  private apiUrl = 'https://swapi.co/api/planets/'
+  private planetUrl = 'https://swapi.co/api/planets/'
+  private filmsUrl = 'https://swapi.co/api/films/'
 
   constructor(
     private http: HttpClient
   ) { }
 
   getPlanetas(id = '') {
-    return this.http.get<IPlanet>(this.apiUrl + id)
+    return this.http.get<IPlanet>(this.planetUrl + id)
+  }
+
+  getFilmes(id = '') {
+    return this.http.get(this.filmsUrl + id)
   }
 }

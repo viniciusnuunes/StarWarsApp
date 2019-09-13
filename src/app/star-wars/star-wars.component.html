@@ -11,17 +11,23 @@
     </mat-card-header>
     <mat-card-content>
       <mat-list>        
-        <!-- <mat-list-item *ngFor="let p of planeta">
+        <!-- <mat-list-item *ngFor="let p of planetas$ | async">
           <p mat-line>{{ p.name }}</p>
           <p mat-line>{{ p.climate }}</p>
           <p mat-line>{{ p.population }}</p>
           <p mat-line>{{ p.films }}</p>
         </mat-list-item> -->
+        <!-- <mat-list-item>
+          <p mat-line>{{ planeta.name }}</p>
+          <p mat-line>{{ planeta.climate }}</p>
+          <p mat-line>{{ planeta.population }}</p>
+          <p mat-line>{{ planeta.films }}</p>
+        </mat-list-item> -->
       </mat-list>
     </mat-card-content>
     <mat-card-actions>
       <button mat-raised-button color="primary" (click)="getPlanetas()">
-        <mat-icon>cached</mat-icon>
+        Find Planet <mat-icon>cached</mat-icon>
       </button>
     </mat-card-actions>
     <mat-card-footer>	

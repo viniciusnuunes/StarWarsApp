@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from './data.service';
 import { IPlanet } from './iplanet';
+import { Observable } from 'rxjs';
+import { mergeMap } from 'rxjs/operators';
 
 @Component({
   selector: 'app-star-wars',
@@ -9,29 +11,23 @@ import { IPlanet } from './iplanet';
 })
 export class StarWarsComponent implements OnInit {
 
+  planeta: any = [];  
   
   constructor(
     private dataService: DataService
-    ) { }
-    
-    // planeta: any;
-    
-    ngOnInit() {
+  ) { }
       
-    }
+  ngOnInit() {
     
-  planeta: any = [];
-  count = 0;
+  }
 
   getPlanetas() {
-    this.dataService.getPlanetas().subscribe(response => {
-      console.log(response)
-      const newCount = Math.floor(Math.random() * response.count).toString()
-
-      console.log(newCount)
-      this.dataService.getPlanetas(newCount).subscribe(res => {
-        console.log(res)
-        this.planeta = res;
+    this.dataService.getPlanetas().subscribe(planetas => {      
+      const newCount = Math.floor(Math.random() * planetas.count).toString()
+      
+      this.dataService.getPlanetas(newCount).subscribe(planeta => {
+        console.log(planeta)
+        this.planeta = planeta;
       })
     })
   }
