@@ -1,32 +1,17 @@
-
-<p>{{ planeta.name }}</p>
-<p>{{ planeta.climate }}</p>
-<p>{{ planeta.population }}</p>
-<p>{{ planeta.films }}</p>
-
 <div fxLayout="row" fxLayoutAlign="center">
-  <mat-card fxFlex="75%" class="mat-elevation-z8">
+  <mat-card fxFlex="70%" class="mat-elevation-z8">
     <mat-card-header>
-      <mat-card-title>Star Wars Planets</mat-card-title>
+      <mat-card-title>{{ planeta.name }}</mat-card-title>
+      <mat-card-subtitle></mat-card-subtitle>
     </mat-card-header>
     <mat-card-content>
-      <mat-list>        
-        <!-- <mat-list-item *ngFor="let p of planetas$ | async">
-          <p mat-line>{{ p.name }}</p>
-          <p mat-line>{{ p.climate }}</p>
-          <p mat-line>{{ p.population }}</p>
-          <p mat-line>{{ p.films }}</p>
-        </mat-list-item> -->
-        <!-- <mat-list-item>
-          <p mat-line>{{ planeta.name }}</p>
-          <p mat-line>{{ planeta.climate }}</p>
-          <p mat-line>{{ planeta.population }}</p>
-          <p mat-line>{{ planeta.films }}</p>
-        </mat-list-item> -->
-      </mat-list>
-    </mat-card-content>
+      <p>Clima: {{ planeta.climate }}</p>
+      <p>População: {{ planeta.population }}</p>
+      <p>Terreno: {{planeta.terrain }}</p>
+      <p *ngFor="let f of filme">Filme: {{ f }}</p>
+      </mat-card-content>
     <mat-card-actions>
-      <button mat-raised-button color="primary" (click)="getPlanetas()">
+      <button mat-raised-button color="primary" (click)="getPlaneta()">
         Find Planet <mat-icon>cached</mat-icon>
       </button>
     </mat-card-actions>
