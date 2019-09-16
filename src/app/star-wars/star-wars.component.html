@@ -1,14 +1,14 @@
 <div fxLayout="row" fxLayoutAlign="center">
-  <mat-card fxFlex="70%" class="mat-elevation-z8">
+  <mat-card fxFlex="30%" class="mat-elevation-z20">
     <mat-card-header>
-      <mat-card-title>{{ planeta.name }}</mat-card-title>
+      <mat-card-title>Planet: {{ planeta.name }}</mat-card-title>
       <mat-card-subtitle></mat-card-subtitle>
     </mat-card-header>
     <mat-card-content>
-      <p>Clima: {{ planeta.climate }}</p>
-      <p>População: {{ planeta.population }}</p>
-      <p>Terreno: {{planeta.terrain }}</p>
-      <p *ngFor="let f of filme">Filme: {{ f }}</p>
+      <p>Climate: {{ planeta.climate }}</p>
+      <p>Population: {{ planeta.population }}</p>
+      <p>Terrain: {{planeta.terrain }}</p>
+      <p *ngFor="let f of filme">Film: {{ f }}</p>
       </mat-card-content>
     <mat-card-actions>
       <button mat-raised-button color="primary" (click)="getPlaneta()">
